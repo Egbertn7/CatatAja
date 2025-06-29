@@ -1,3 +1,5 @@
+import { FaCheck, FaUndo, FaEdit, FaTrash } from "react-icons/fa";
+
 const TaskList = ({ tasks, onDelete, onToggleComplete, onEdit }) => {
   return (
     <div className="overflow-x-auto">
@@ -37,23 +39,26 @@ const TaskList = ({ tasks, onDelete, onToggleComplete, onEdit }) => {
                 <td className="px-4 py-3 text-center space-y-1 sm:space-x-2 sm:space-y-0 sm:flex sm:justify-center">
                   <button
                     onClick={() => onToggleComplete(task.id)}
-                    className={`text-white px-3 py-1 rounded-md text-sm font-medium ${
+                    className={`cursor-pointer text-white p-2 rounded-md text-sm font-medium flex items-center justify-center ${
                       task.completed ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-500 hover:bg-green-600'
                     }`}
+                    title={task.completed ? "Batalkan" : "Selesai"}
                   >
-                    {task.completed ? 'Batalkan' : 'Selesai'}
+                    {task.completed ? <FaUndo /> : <FaCheck />}
                   </button>
                   <button
                     onClick={() => onEdit(task)}
-                    className="text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-md text-sm font-medium"
+                    className="cursor-pointer text-white bg-blue-500 hover:bg-blue-600 p-2 rounded-md text-sm font-medium flex items-center justify-center"
+                    title="Edit"
                   >
-                    Edit
+                    <FaEdit />
                   </button>
                   <button
                     onClick={() => onDelete(task.id)}
-                    className="text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded-md text-sm font-medium"
+                    className="cursor-pointer text-white bg-red-500 hover:bg-red-600 p-2 rounded-md text-sm font-medium flex items-center justify-center"
+                    title="Hapus"
                   >
-                    Hapus
+                    <FaTrash />
                   </button>
                 </td>
               </tr>

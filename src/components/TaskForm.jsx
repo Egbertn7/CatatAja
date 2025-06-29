@@ -45,7 +45,7 @@ const TaskForm = ({ onAddTask, onUpdateTask, taskToEdit, onCancel }) => {
         <label className="block text-gray-600 mb-1">Judul</label>
         <input
           type="text"
-          className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full border border-gray-300 text-black p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Masukkan judul tugas"
@@ -54,7 +54,7 @@ const TaskForm = ({ onAddTask, onUpdateTask, taskToEdit, onCancel }) => {
       <div>
         <label className="block text-gray-600 mb-1">Deskripsi</label>
         <textarea
-          className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full border border-gray-300 text-black p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Deskripsi tugas (opsional)"

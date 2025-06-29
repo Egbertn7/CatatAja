@@ -82,17 +82,17 @@ function App() {
     return true;
   });
 
-  if (!isLoaded) {
-    return <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="text-xl">Loading...</div>
-    </div>;
-  }
+  // if (!isLoaded) {
+  //   return <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+  //     <div className="text-xl">Loading...</div>
+  //   </div>;
+  // }
 
   return (
     <div className="min-h-screen  text-white">
       <Navbar currentView={currentView} setCurrentView={setCurrentView} />
 
-      <div className="container mx-auto px-4 py-8">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center mb-4 flex-wrap gap-2">
           <div className="flex gap-2">
             <h2 className=' text-gray-600 font-semibold py-1'>Filter: </h2>

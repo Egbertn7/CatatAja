@@ -6,7 +6,7 @@ const TaskList = ({ tasks, onDelete, onToggleComplete, onEdit }) => {
       {tasks.length === 0 ? (
         <div className="text-center text-gray-500 text-lg">Belum ada tugas.</div>
       ) : (
-        <table className="min-w-full bg-white shadow-md rounded-md overflow-hidden">
+        <table className="min-w-full bg-white shadow-md rounded-md overflow-hidden text-sm">
           <thead className="bg-blue-600 text-white">
             <tr>
               <th className="px-4 py-3 text-left">Judul</th>

@@ -1,6 +1,6 @@
 # React + TailwindCSS + Javascript + Localstorage
 
-"ToDoList"
+"CatatAja"
 
 Website manajemen tugas bergaya modern dan minimalis yang dibangun menggunakan React dan Tailwind CSS. Aplikasi ini memungkinkan pengguna untuk membuat, mengedit, menghapus, dan menandai tugas sebagai selesai. Semua data disimpan di browser menggunakan localStorage, sehingga tetap tersimpan meskipun halaman di-refresh bisa digunakan berbagai perangkat.
 

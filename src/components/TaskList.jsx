@@ -1,10 +1,12 @@
-import { FaCheck, FaUndo, FaEdit, FaTrash } from "react-icons/fa";
+import {FaCheck, FaUndo, FaEdit, FaTrash} from "react-icons/fa";
 
-const TaskList = ({ tasks, onDelete, onToggleComplete, onEdit }) => {
+const TaskList = ({tasks, onDelete, onToggleComplete, onEdit}) => {
   return (
     <div className="overflow-x-auto">
       {tasks.length === 0 ? (
-        <div className="text-center text-gray-500 text-lg">Belum ada tugas.</div>
+        <div className="text-center text-gray-500 text-lg">
+          Belum ada tugas.
+        </div>
       ) : (
         <table className="min-w-full bg-white shadow-md rounded-md overflow-hidden text-sm">
           <thead className="bg-blue-600 text-white">
@@ -20,18 +22,49 @@ const TaskList = ({ tasks, onDelete, onToggleComplete, onEdit }) => {
               <tr
                 key={task.id}
                 className={`border-b ${
-                  task.completed ? 'bg-blue-50' : index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                  task.completed
+                    ? "bg-blue-50"
+                    : index % 2 === 0
+                    ? "bg-white"
+                    : "bg-gray-50"
                 }`}
               >
-                <td className={`px-4 py-3 font-medium ${
-                  task.completed ? 'line-through text-gray-400' : 'text-gray-800'
-                }`}>
-                  {task.title}
+                <td
+                  className={`px-4 py-3 text-left font-medium ${
+                    task.completed
+                      ? "line-through text-gray-400"
+                      : "text-gray-800"
+                  }`}
+                >
+                  {/* {task.title} */}
+                  <pre className=" m-0">
+                    {task.title
+                      ? task.title.replace(/(.{8})/g, "$1\n")
+                      : "-"}
+                  </pre>
                 </td>
-                <td className={`px-4 py-3 ${
-                  task.completed ? 'line-through text-gray-400' : 'text-gray-700'
-                }`}>
-                  {task.description || '-'}
+                {/* <td
+                  className={`px-4 py-3 text-left ${
+                    task.completed
+                      ? "line-through text-gray-400"
+                      : "text-gray-700"
+                  }`}
+                >
+                  {task.description || "-"}
+                </td> */}
+
+                <td
+                  className={`px-4 py-3 text-left break-all ${
+                    task.completed
+                      ? "line-through text-gray-400"
+                      : "text-gray-700"
+                  }`}
+                >
+                  <pre className="m-0">
+                    {task.description
+                      ? task.description.replace(/(.{10})/g, "$1\n")
+                      : "-"}
+                  </pre>
                 </td>
                 <td className="px-4 py-3 text-sm text-gray-500">
                   {new Date(task.createdAt).toLocaleString()}
@@ -40,7 +73,9 @@ const TaskList = ({ tasks, onDelete, onToggleComplete, onEdit }) => {
                   <button
                     onClick={() => onToggleComplete(task.id)}
                     className={`cursor-pointer text-white p-2 rounded-md text-sm font-medium flex items-center justify-center ${
-                      task.completed ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-green-500 hover:bg-green-600'
+                      task.completed
+                        ? "bg-yellow-500 hover:bg-yellow-600"
+                        : "bg-green-500 hover:bg-green-600"
                     }`}
                     title={task.completed ? "Batalkan" : "Selesai"}
                   >
